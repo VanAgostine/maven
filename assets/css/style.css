@@ -214,8 +214,8 @@ p { max-width: 620px; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 88%;
-    max-width: var(--container);
+    width: 94%;
+    max-width: 1400px;
     margin: 0 auto;
     height: 70px;
 }
@@ -252,7 +252,7 @@ p { max-width: 620px; }
 
 .header__logo {
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 400;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -378,8 +378,8 @@ p { max-width: 620px; }
 }
 
 .hero__media {
-    width: 88%;
-    max-width: var(--container);
+    width: 94%;
+    max-width: 1400px;
     margin: 0 auto;
     overflow: hidden;
     aspect-ratio: 16 / 8;
@@ -394,24 +394,21 @@ p { max-width: 620px; }
 }
 
 .hero__text {
-    text-align: center;
+    text-align: right;
     padding: 50px 5% 30px;
-}
-
-.hero__title {
-    font-family: var(--font-display);
-    font-weight: 400;
-    margin-bottom: 12px;
+    max-width: 1400px;
+    width: 94%;
+    margin: 0 auto;
 }
 
 .hero__subtitle {
     font-family: var(--font-heading);
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 300;
     font-style: italic;
     color: var(--brown);
     max-width: 600px;
-    margin: 0 auto;
+    margin-left: auto;
 }
 
 /* Inner page hero — smaller */
@@ -930,6 +927,74 @@ p { max-width: 620px; }
     font-size: 0.7rem;
     color: var(--brown);
     opacity: 0.7;
+}
+
+/* ----- Maven Dictionary Definition ----- */
+
+.maven-definition {
+    max-width: 580px;
+}
+
+.maven-definition__word {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 400;
+    color: var(--black);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.maven-definition__phonetic {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--brown);
+    margin-bottom: 4px;
+}
+
+.maven-definition__pos {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--brown);
+    margin-bottom: 28px;
+}
+
+.maven-definition__list {
+    list-style: decimal;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.maven-definition__list li {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--black);
+}
+
+.maven-definition__list li strong {
+    font-weight: 500;
+}
+
+.maven-definition__list li em {
+    color: var(--brown);
+    font-size: 0.88rem;
+}
+
+.maven-definition__connect {
+    text-align: right;
+}
+
+.maven-definition__connect p {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-style: italic;
+    color: var(--brown);
+    margin-left: auto;
+    max-width: 450px;
 }
 
 /* ----- Reveal Animations ----- */
