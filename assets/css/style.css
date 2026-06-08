@@ -211,6 +211,7 @@ p { max-width: 620px; }
 }
 
 .header__inner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -251,14 +252,18 @@ p { max-width: 620px; }
 
 
 .header__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 3.2vw, 1.8rem);
     font-weight: 400;
-    letter-spacing: 0.28em;
+    letter-spacing: clamp(0.1em, 1.4vw, 0.28em);
     text-transform: uppercase;
     color: var(--black);
     text-align: center;
-    flex: 1;
+    white-space: nowrap;
 }
 
 .header__right {
@@ -414,6 +419,59 @@ p { max-width: 620px; }
 /* Inner page hero — smaller */
 .hero--inner .hero__media {
     aspect-ratio: 16 / 6;
+}
+
+/* Home hero — cinematic & shorter, with the quote overlaid on the image */
+.hero--home {
+    position: relative;
+    padding-top: 24px;
+}
+
+.hero--home .hero__media {
+    position: relative;
+    aspect-ratio: 21 / 9;
+}
+
+/* Crop the lone surfer out of frame; gentle drift makes the water feel alive */
+.hero--home .hero__media img {
+    object-position: center 10%;
+    animation: heroDrift 22s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+/* Soft scrim along the bottom so the quote stays legible over bright water */
+.hero--home .hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 45%);
+    pointer-events: none;
+}
+
+/* Quote across the bottom of the image — italic, no quotation marks */
+.hero--home .hero__text {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 94%;
+    max-width: 1400px;
+    padding: 0 5% 34px;
+    z-index: 2;
+}
+
+.hero--home .hero__subtitle {
+    color: var(--white);
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes heroDrift {
+    from { transform: scale(1.03); }
+    to   { transform: scale(1.12) translateY(-2%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero--home .hero__media img { animation: none; }
 }
 
 /* ----- Content Block (text + image, Aman asymmetric layout) ----- */
@@ -1117,10 +1175,24 @@ p { max-width: 620px; }
 
     .hero__media { aspect-ratio: 16 / 10; }
     .hero--inner .hero__media { aspect-ratio: 16 / 8; }
+    .hero--home .hero__media { aspect-ratio: 4 / 3; }
+    .hero--home .hero__text { padding: 0 6% 24px; }
 }
 
 @media (max-width: 480px) {
     .experience-grid { grid-template-columns: 1fr; }
     .dest-grid { grid-template-columns: 1fr; }
     .dest-tile { aspect-ratio: 16 / 10; }
+
+    /* Keep the header tidy so the logo and Contact button both fit */
+    .header__inner { width: 92%; }
+    .header__logo {
+        font-size: clamp(0.85rem, 4vw, 1.3rem);
+        letter-spacing: 0.12em;
+    }
+    .header__cta {
+        padding: 9px 16px;
+        font-size: 0.55rem;
+        letter-spacing: 0.1em;
+    }
 }
