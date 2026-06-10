@@ -1019,6 +1019,24 @@ p { max-width: 620px; }
     flex: 1;
 }
 
+/* Footer preferred-partners carousel (replaces the Get Inspired bar) */
+.footer__partners {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--beige-dark);
+    overflow: hidden;
+}
+
+.footer__partners-title {
+    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brown);
+    opacity: 0.7;
+    margin-bottom: 28px;
+}
+
 /* Footer columns */
 .footer__columns {
     display: grid;
