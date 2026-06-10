@@ -57,10 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ----- Marquee Duplication ----- */
 
-    const marquee = document.querySelector('.marquee');
-    if (marquee) {
-        marquee.innerHTML += marquee.innerHTML;
-    }
+    document.querySelectorAll('.marquee, .dest-marquee__track').forEach(m => {
+        m.innerHTML += m.innerHTML;
+    });
 
     /* ----- Smooth Scroll ----- */
 

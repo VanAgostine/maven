@@ -540,7 +540,7 @@ p { max-width: 620px; }
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: clamp(10px, 1.6vw, 28px);
 }
 
 .experience-card {
@@ -566,11 +566,11 @@ p { max-width: 620px; }
 }
 
 .experience-card__body {
-    padding: 22px 24px 28px;
+    padding: clamp(12px, 1.5vw, 24px) clamp(12px, 1.5vw, 24px) clamp(16px, 1.9vw, 28px);
 }
 
 .experience-card__subtitle {
-    font-size: 0.6rem;
+    font-size: clamp(0.5rem, 0.78vw, 0.6rem);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--brown);
@@ -580,7 +580,7 @@ p { max-width: 620px; }
 
 .experience-card__title {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: clamp(0.85rem, 1.5vw, 1.3rem);
     font-weight: 400;
     color: var(--black);
     line-height: 1.3;
@@ -622,6 +622,40 @@ p { max-width: 620px; }
     font-size: 0.95rem;
     letter-spacing: 0.04em;
     color: var(--white);
+}
+
+/* ----- Destinations Marquee (horizontal "moving road") ----- */
+
+.dest-marquee {
+    overflow: hidden;
+    width: 100%;
+}
+
+.dest-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: dest-scroll 60s linear infinite;
+}
+
+.dest-marquee:hover .dest-marquee__track {
+    animation-play-state: paused;
+}
+
+/* Per-tile margin (not flex gap) keeps the -50% loop perfectly seamless */
+.dest-marquee .dest-tile {
+    flex: 0 0 auto;
+    width: clamp(220px, 24vw, 340px);
+    margin-right: 20px;
+    aspect-ratio: 4 / 3;
+}
+
+@keyframes dest-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dest-marquee__track { animation: none; }
 }
 
 /* ----- Service Tiers (white cards on beige) ----- */
@@ -1354,7 +1388,6 @@ p { max-width: 620px; }
 
 @media (max-width: 1024px) {
     :root { --section-pad: 90px; }
-    .experience-grid { grid-template-columns: repeat(2, 1fr); }
     .dest-grid { grid-template-columns: repeat(3, 1fr); }
     .footer__columns { grid-template-columns: 1fr 1fr; }
     .content-block { gap: 50px; }
@@ -1375,7 +1408,6 @@ p { max-width: 620px; }
 
     .content-block--reverse { direction: ltr; }
 
-    .experience-grid { grid-template-columns: 1fr 1fr; }
     .dest-grid { grid-template-columns: 1fr 1fr; }
     .image-row--2, .image-row--3 { grid-template-columns: 1fr; }
     .feature-list { grid-template-columns: 1fr; }
@@ -1428,7 +1460,6 @@ p { max-width: 620px; }
 }
 
 @media (max-width: 480px) {
-    .experience-grid { grid-template-columns: 1fr; }
     .dest-grid { grid-template-columns: 1fr; }
     .dest-tile { aspect-ratio: 16 / 10; }
 }
