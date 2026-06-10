@@ -581,6 +581,8 @@ p { max-width: 620px; }
 
 .experience-card {
     background: var(--white);
+    display: flex;
+    flex-direction: column;
     transition: transform var(--ease), box-shadow var(--ease);
 }
 
@@ -609,6 +611,9 @@ p { max-width: 620px; }
 }
 
 .experience-card__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     padding: clamp(12px, 1.5vw, 24px) clamp(12px, 1.5vw, 24px) clamp(16px, 1.9vw, 28px);
 }
 
@@ -618,10 +623,12 @@ p { max-width: 620px; }
     text-transform: uppercase;
     color: var(--brown);
     opacity: 0.6;
-    margin-bottom: 6px;
+    line-height: 1.55;
+    margin-bottom: 14px;
 }
 
 .experience-card__title {
+    margin-top: auto;
     font-family: var(--font-heading);
     font-size: clamp(0.85rem, 1.5vw, 1.3rem);
     font-weight: 400;
