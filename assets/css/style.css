@@ -481,6 +481,20 @@ p { max-width: 620px; }
     .hero__intro { display: none; }
 }
 
+/* Warm golden grade — harmonizes a cool hero image with the sunset tones below it */
+.hero--warm .hero__media img {
+    filter: sepia(0.34) saturate(1.22) brightness(1.05) contrast(1.02) hue-rotate(-8deg);
+}
+
+.hero--warm .hero__media::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(150, 92, 40, 0.30), rgba(214, 158, 96, 0.18));
+}
+
 /* Gradient that deepens toward the bottom so the quote rests in a calm,
    darker band instead of competing with a busy image */
 .hero--cover .hero__media::after {
