@@ -1212,6 +1212,18 @@ p { max-width: 620px; }
     padding: 50px 46px;
     display: flex;
     flex-direction: column;
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+/* Hover lift — tile rises and grows slightly as the shadow deepens */
+.tier:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 46px 84px -28px rgba(62, 39, 35, 0.46), 0 18px 36px -14px rgba(62, 39, 35, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tier { transition: none; }
+    .tier:hover { transform: none; }
 }
 
 .tier__header {
