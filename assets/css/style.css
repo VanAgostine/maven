@@ -1152,7 +1152,7 @@ p { max-width: 620px; }
 
 .welcome-split {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: stretch;
 }
