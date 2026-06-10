@@ -418,12 +418,45 @@ p { max-width: 620px; }
 
 /* Home hero — shorter so it takes less vertical space, framed up to crop
    the lone surfer out of the bottom of the water shot */
+.hero:not(.hero--inner) {
+    position: relative;
+}
+
 .hero:not(.hero--inner) .hero__media {
+    position: relative;
     aspect-ratio: 21 / 9;
 }
 
 .hero:not(.hero--inner) .hero__media img {
     object-position: center 15%;
+}
+
+/* Soft gradient so the overlaid quote stays legible over bright water */
+.hero:not(.hero--inner) .hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 50%);
+    pointer-events: none;
+}
+
+/* Quote overlaid lower-left — italic, no quote marks, like Maven speaking to you */
+.hero:not(.hero--inner) .hero__text {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 94%;
+    max-width: 1400px;
+    padding: 0 5% 34px;
+    text-align: left;
+    z-index: 2;
+}
+
+.hero:not(.hero--inner) .hero__subtitle {
+    color: var(--white);
+    margin-left: 0;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45);
 }
 
 /* ----- Content Block (text + image, Aman asymmetric layout) ----- */
@@ -1127,6 +1160,8 @@ p { max-width: 620px; }
 
     .hero__media { aspect-ratio: 16 / 10; }
     .hero--inner .hero__media { aspect-ratio: 16 / 8; }
+    .hero:not(.hero--inner) .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
+    .hero:not(.hero--inner) .hero__text { padding: 0 6% 22px; }
 }
 
 @media (max-width: 480px) {
