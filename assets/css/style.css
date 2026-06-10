@@ -1121,6 +1121,8 @@ p { max-width: 620px; }
 
 .maven-definition {
     max-width: 580px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 .maven-definition__word {
@@ -1128,8 +1130,17 @@ p { max-width: 620px; }
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 400;
     color: var(--black);
-    margin-bottom: 6px;
+    margin-bottom: 0;
     line-height: 1.2;
+}
+
+.maven-definition__word::after {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px 0 12px;
 }
 
 .maven-definition__phonetic {
@@ -1145,7 +1156,7 @@ p { max-width: 620px; }
     font-size: 1rem;
     font-style: italic;
     color: var(--brown);
-    margin-bottom: 28px;
+    margin-bottom: 42px;
 }
 
 .maven-definition__list {
