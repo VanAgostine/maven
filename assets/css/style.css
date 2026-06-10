@@ -969,6 +969,27 @@ p { max-width: 620px; }
 
 .footer__link:hover { color: var(--gold); }
 
+.footer__socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 2px;
+}
+
+.footer__social {
+    display: inline-flex;
+    color: var(--brown);
+    transition: color var(--ease);
+}
+
+.footer__social:hover { color: var(--gold); }
+
+.footer__social svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    display: block;
+}
+
 .footer__bottom {
     border-top: 1px solid var(--beige-dark);
     padding-top: 24px;
