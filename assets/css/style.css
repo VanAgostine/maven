@@ -975,26 +975,24 @@ p { max-width: 620px; }
 /* ----- Maven Dictionary Definition ----- */
 
 .maven-definition {
-    max-width: 620px;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 580px;
 }
 
 .maven-definition__word {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 400;
     color: var(--black);
-    line-height: 1.05;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
+    line-height: 1.2;
 }
 
 .maven-definition__phonetic {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--brown);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .maven-definition__pos {
@@ -1002,42 +1000,44 @@ p { max-width: 620px; }
     font-size: 1rem;
     font-style: italic;
     color: var(--brown);
-    opacity: 0.75;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
 }
 
-.maven-definition__def {
-    font-family: var(--font-heading);
-    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
-    font-weight: 400;
-    line-height: 1.45;
+.maven-definition__list {
+    list-style: decimal;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.maven-definition__list li {
+    font-size: 0.92rem;
+    line-height: 1.7;
     color: var(--black);
-    max-width: 540px;
-    margin: 0 auto 16px;
 }
 
-.maven-definition__gloss {
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-    font-style: italic;
-    line-height: 1.75;
+.maven-definition__list li strong {
+    font-weight: 500;
+}
+
+.maven-definition__list li em {
     color: var(--brown);
-    max-width: 460px;
-    margin: 0 auto;
+    font-size: 0.88rem;
 }
 
-.maven-definition .gold-bar--center {
-    margin: 40px auto;
+.maven-definition__connect {
+    text-align: right;
 }
 
 .maven-definition__connect p {
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
     font-style: italic;
-    line-height: 1.5;
     color: var(--brown);
-    max-width: 520px;
-    margin: 0 auto;
+    margin-left: auto;
+    max-width: 450px;
 }
 
 /* ----- Reveal Animations ----- */
