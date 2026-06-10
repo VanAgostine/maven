@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeEl) {
         const fullText = typeEl.textContent;
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const startDelay = parseInt(typeEl.dataset.typewriterDelay || '500', 10);
         if (!reduce) {
             typeEl.textContent = '';
             typeEl.classList.add('is-typing');
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => typeEl.classList.remove('is-typing'), 1400);
                 }
             };
-            setTimeout(step, 500);
+            setTimeout(step, startDelay);
         }
     }
 

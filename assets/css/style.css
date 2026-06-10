@@ -438,6 +438,49 @@ p { max-width: 620px; }
     object-position: center 15%;
 }
 
+/* Home hero background video — fills the frame like the cover image.
+   Pulled up slightly so the bottom edge (and any source watermark) crops away. */
+.hero__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+}
+
+/* "MAVEN" wordmark centered over the video, fading in → holding → fading out
+   to reveal the typed quote underneath */
+.hero__intro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.hero__intro span {
+    font-family: var(--font-display);
+    color: var(--white);
+    font-size: clamp(2.4rem, 9vw, 8rem);
+    letter-spacing: 0.34em;
+    padding-left: 0.34em;
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.55);
+    animation: hero-intro 2.9s ease forwards;
+}
+
+@keyframes hero-intro {
+    0%   { opacity: 0; letter-spacing: 0.6em; }
+    20%  { opacity: 1; letter-spacing: 0.34em; }
+    62%  { opacity: 1; letter-spacing: 0.34em; }
+    100% { opacity: 0; letter-spacing: 0.30em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__intro { display: none; }
+}
+
 /* Gradient that deepens toward the bottom so the quote rests in a calm,
    darker band instead of competing with a busy image */
 .hero--cover .hero__media::after {
