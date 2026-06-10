@@ -1120,9 +1120,22 @@ p { max-width: 620px; }
 /* ----- Maven Dictionary Definition ----- */
 
 .maven-definition {
-    max-width: 580px;
-    margin: 0 auto;
-    padding: 20px 0;
+    max-width: 620px;
+    background: var(--white);
+    box-shadow: 0 28px 55px -30px rgba(62, 39, 35, 0.30), 0 8px 18px -12px rgba(62, 39, 35, 0.10);
+    padding: clamp(34px, 4vw, 50px) clamp(28px, 3.5vw, 46px);
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+/* Hover lift — matches the service tiles and gallery cards */
+.maven-definition:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 46px 84px -28px rgba(62, 39, 35, 0.46), 0 18px 36px -14px rgba(62, 39, 35, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .maven-definition { transition: none; }
+    .maven-definition:hover { transform: none; }
 }
 
 .maven-definition__word {
@@ -1130,17 +1143,8 @@ p { max-width: 620px; }
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 400;
     color: var(--black);
-    margin-bottom: 0;
+    margin-bottom: 6px;
     line-height: 1.2;
-}
-
-.maven-definition__word::after {
-    content: "";
-    display: block;
-    width: 46px;
-    height: 2px;
-    background: var(--gold);
-    margin: 20px 0 12px;
 }
 
 .maven-definition__phonetic {
@@ -1156,7 +1160,7 @@ p { max-width: 620px; }
     font-size: 1rem;
     font-style: italic;
     color: var(--brown);
-    margin-bottom: 42px;
+    margin-bottom: 28px;
 }
 
 .maven-definition__list {
