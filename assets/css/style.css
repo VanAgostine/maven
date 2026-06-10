@@ -1049,6 +1049,67 @@ p { max-width: 620px; }
     max-width: 480px;
 }
 
+/* ----- Full-bleed Banner (edge-to-edge image with centered overlaid text) ----- */
+
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: var(--beige);
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.38);
+    pointer-events: none;
+}
+
+.banner__text {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 8%;
+}
+
+.banner__quote,
+.banner__signoff {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3.4vw, 3rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--white);
+    max-width: 760px;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+
+.banner__label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+}
+
 /* ----- Reveal Animations ----- */
 
 .reveal {
@@ -1171,6 +1232,8 @@ p { max-width: 620px; }
     .hero--inner .hero__media { aspect-ratio: 16 / 8; }
     .hero--cover .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
     .hero--cover .hero__text { padding: 0 6% 22px; }
+    .banner { aspect-ratio: 4 / 3; }
+    .banner__quote, .banner__signoff { font-size: 1.4rem; max-width: 14em; }
 }
 
 @media (max-width: 480px) {
