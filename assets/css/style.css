@@ -21,7 +21,7 @@
     --font-heading: 'Cormorant Garamond', 'Georgia', serif;
     --font-body:    'Montserrat', 'Helvetica Neue', sans-serif;
 
-    --container:        1200px;
+    --container:        1400px;
     --container-narrow: 780px;
     --section-pad:      130px;
 
@@ -125,7 +125,7 @@ p { max-width: 620px; }
 /* ----- Layout ----- */
 
 .container {
-    width: 88%;
+    width: 94%;
     max-width: var(--container);
     margin: 0 auto;
 }
@@ -1450,7 +1450,7 @@ p { max-width: 620px; }
 /* ----- Full-width Image Break ----- */
 
 .image-break {
-    width: 88%;
+    width: 94%;
     max-width: var(--container);
     margin: 0 auto;
     overflow: hidden;
