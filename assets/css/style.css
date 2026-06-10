@@ -1259,30 +1259,25 @@ p { max-width: 620px; }
     color: var(--gold);
 }
 
-/* What to Expect — elegant gold diamond bullets */
-.expect-list {
+/* What to Expect — a serif lead with a witty supporting line per promise */
+.expect {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 30px;
 }
 
-.expect-list li {
-    position: relative;
-    padding-left: 28px;
-    font-size: 0.95rem;
-    line-height: 1.75;
+.expect__lead {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    line-height: 1.3;
     color: var(--black);
+    margin-bottom: 5px;
 }
 
-.expect-list li::before {
-    content: '';
-    position: absolute;
-    left: 3px;
-    top: 0.62em;
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    transform: translateY(-50%) rotate(45deg);
+.expect__text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--brown);
 }
 
 /* ----- Reveal Animations ----- */
