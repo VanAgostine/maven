@@ -416,6 +416,16 @@ p { max-width: 620px; }
     aspect-ratio: 16 / 6;
 }
 
+/* Home hero — shorter so it takes less vertical space, framed up to crop
+   the lone surfer out of the bottom of the water shot */
+.hero:not(.hero--inner) .hero__media {
+    aspect-ratio: 21 / 9;
+}
+
+.hero:not(.hero--inner) .hero__media img {
+    object-position: center 15%;
+}
+
 /* ----- Content Block (text + image, Aman asymmetric layout) ----- */
 
 .content-block {
