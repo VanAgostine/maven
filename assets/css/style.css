@@ -1190,6 +1190,9 @@ p { max-width: 620px; }
     object-fit: cover;
 }
 
+/* Reversed split — image on the left (used to alternate sides down a page) */
+.welcome-split--reverse .welcome-split__img { order: -1; }
+
 /* ----- Reveal Animations ----- */
 
 .reveal {
@@ -1317,6 +1320,7 @@ p { max-width: 620px; }
     .banner__quote, .banner__signoff { font-size: 1.2rem; max-width: 15em; }
     .welcome-split { grid-template-columns: 1fr; gap: 36px; }
     .welcome-split__img { min-height: 0; aspect-ratio: 3 / 4; }
+    .welcome-split--reverse .welcome-split__img { order: 0; }
 }
 
 @media (max-width: 480px) {
