@@ -782,18 +782,24 @@ p { max-width: 620px; }
 
 .profile {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .profile--reverse { direction: rtl; }
 .profile--reverse > * { direction: ltr; }
 
-.profile__image {
-    aspect-ratio: 3 / 4;
+.profile__media {
+    position: relative;
     overflow: hidden;
     background: var(--beige);
+}
+
+.profile__image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
 }
 
 .profile__image img {
