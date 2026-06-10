@@ -1041,59 +1041,6 @@ p { max-width: 620px; }
     max-width: 480px;
 }
 
-/* ----- Home Welcome (centered, airy — flows with no dividers) ----- */
-
-.welcome {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.welcome__heading {
-    margin-bottom: 28px;
-}
-
-.welcome__intro {
-    max-width: 640px;
-    margin: 0 auto 60px;
-}
-
-/* The line that gets remembered — larger, light, a moment on its own */
-.welcome__statement {
-    font-family: var(--font-heading);
-    font-size: clamp(1.7rem, 3.2vw, 2.6rem);
-    font-weight: 300;
-    line-height: 1.25;
-    color: var(--black);
-    max-width: 600px;
-    margin: 0 auto 60px;
-}
-
-.welcome__support {
-    max-width: 600px;
-    margin: 0 auto 60px;
-}
-
-.welcome__signoff {
-    font-family: var(--font-heading);
-    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-    font-style: italic;
-    color: var(--brown);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.welcome__label {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 0.65rem;
-    font-weight: 500;
-    font-style: normal;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 14px;
-}
-
 /* ----- Reveal Animations ----- */
 
 .reveal {
