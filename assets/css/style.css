@@ -929,8 +929,7 @@ p { max-width: 620px; }
 
 .marquee-wrap {
     padding: 60px 0;
-    border-top: 1px solid var(--beige-dark);
-    background: var(--beige);
+    background: var(--cream);
     overflow: hidden;
 }
 
