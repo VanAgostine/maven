@@ -138,6 +138,10 @@ p { max-width: 620px; }
     padding: var(--section-pad) 0;
 }
 
+/* Tighten the gap when two sections should read as one grouped block */
+.section--pb-tight { padding-bottom: 64px; }
+.section--pt-tight { padding-top: 64px; }
+
 /* Beige-backed section for layering depth */
 .section--beige {
     background: var(--beige);
