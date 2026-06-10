@@ -257,12 +257,13 @@ p { max-width: 620px; }
 
 .header__logo {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: clamp(0.9rem, 2.4vw, 1.8rem);
     font-weight: 400;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--black);
     text-align: center;
+    white-space: nowrap;
     flex: 1;
 }
 
@@ -545,6 +546,13 @@ p { max-width: 620px; }
 
 .experience-card {
     background: var(--white);
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+/* Hover lift — same expanding feel as the service tiles */
+.experience-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 26px 52px -28px rgba(62, 39, 35, 0.32), 0 10px 22px -12px rgba(62, 39, 35, 0.12);
 }
 
 .experience-card__image {
@@ -629,6 +637,7 @@ p { max-width: 620px; }
 .dest-marquee {
     overflow: hidden;
     width: 100%;
+    padding: 30px 0;
 }
 
 .dest-marquee__track {
@@ -647,6 +656,13 @@ p { max-width: 620px; }
     width: clamp(220px, 24vw, 340px);
     margin-right: 20px;
     aspect-ratio: 4 / 3;
+    transition: transform var(--ease), box-shadow var(--ease);
+}
+
+.dest-marquee .dest-tile:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 24px 46px -24px rgba(62, 39, 35, 0.40);
+    z-index: 2;
 }
 
 @keyframes dest-scroll {
@@ -1462,4 +1478,6 @@ p { max-width: 620px; }
 @media (max-width: 480px) {
     .dest-grid { grid-template-columns: 1fr; }
     .dest-tile { aspect-ratio: 16 / 10; }
+    .header__cta { padding: 9px 16px; font-size: 0.55rem; letter-spacing: 0.1em; }
+    .header__logo { letter-spacing: 0.16em; }
 }
