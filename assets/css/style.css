@@ -1148,8 +1148,8 @@ p { max-width: 620px; }
 
 .welcome-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
     align-items: stretch;
 }
 
@@ -1160,10 +1160,10 @@ p { max-width: 620px; }
     text-align: left;
 }
 
+.welcome-split__text > * { margin: 0; }
 .welcome-split__text h2 { margin-bottom: 4px; }
-.welcome-split__text p { margin: 0; }
-.welcome-split__text > * + * { margin-top: 26px; }
-.welcome-split__text .gold-bar { margin-top: 18px; }
+.welcome-split__text > * + * { margin-top: 46px; }
+.welcome-split__text .gold-bar { margin-top: 16px; }
 
 /* Quotes as elegant italic pull-lines between the paragraphs */
 .welcome-split__quote {
@@ -1175,13 +1175,16 @@ p { max-width: 620px; }
     color: var(--black);
 }
 
+/* Image is absolutely filled so it crops to exactly the text column's height */
 .welcome-split__img {
+    position: relative;
     overflow: hidden;
-    min-height: 520px;
     background: var(--beige);
 }
 
 .welcome-split__img img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
