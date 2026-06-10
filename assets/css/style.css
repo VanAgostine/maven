@@ -21,7 +21,7 @@
     --font-heading: 'Cormorant Garamond', 'Georgia', serif;
     --font-body:    'Montserrat', 'Helvetica Neue', sans-serif;
 
-    --container:        1400px;
+    --container:        1200px;
     --container-narrow: 780px;
     --section-pad:      130px;
 
@@ -125,7 +125,7 @@ p { max-width: 620px; }
 /* ----- Layout ----- */
 
 .container {
-    width: 94%;
+    width: 88%;
     max-width: var(--container);
     margin: 0 auto;
 }
@@ -384,8 +384,8 @@ p { max-width: 620px; }
 }
 
 .hero__media {
-    width: 94%;
-    max-width: 1400px;
+    width: 88%;
+    max-width: var(--container);
     margin: 0 auto;
     overflow: hidden;
     aspect-ratio: 16 / 8;
@@ -454,8 +454,8 @@ p { max-width: 620px; }
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 94%;
-    max-width: 1400px;
+    width: 88%;
+    max-width: var(--container);
     padding: 0 5% 34px;
     text-align: left;
     z-index: 2;
@@ -1120,7 +1120,6 @@ p { max-width: 620px; }
 /* ----- Maven Dictionary Definition ----- */
 
 .maven-definition {
-    max-width: 620px;
     background: var(--white);
     box-shadow: 0 28px 55px -30px rgba(62, 39, 35, 0.30), 0 8px 18px -12px rgba(62, 39, 35, 0.10);
     padding: clamp(34px, 4vw, 50px) clamp(28px, 3.5vw, 46px);
@@ -1205,8 +1204,8 @@ p { max-width: 620px; }
 
 .banner {
     position: relative;
-    width: 94%;
-    max-width: 1400px;
+    width: 88%;
+    max-width: var(--container);
     margin: 0 auto;
     overflow: hidden;
     aspect-ratio: 21 / 9;
@@ -1450,7 +1449,7 @@ p { max-width: 620px; }
 /* ----- Full-width Image Break ----- */
 
 .image-break {
-    width: 94%;
+    width: 88%;
     max-width: var(--container);
     margin: 0 auto;
     overflow: hidden;
