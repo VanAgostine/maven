@@ -1053,9 +1053,11 @@ p { max-width: 620px; }
 
 .banner {
     position: relative;
-    width: 100%;
+    width: 94%;
+    max-width: 1400px;
+    margin: 0 auto;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 21 / 9;
     background: var(--beige);
 }
 
@@ -1066,48 +1068,59 @@ p { max-width: 620px; }
     object-position: center;
 }
 
+/* Same deepening gradient as the hero so the lower-left quote stays legible */
 .banner::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.38);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.34) 30%, rgba(0, 0, 0, 0) 62%);
     pointer-events: none;
 }
 
+/* Quote overlaid lower-left, matching the hero quote style exactly */
 .banner__text {
     position: absolute;
-    inset: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 8%;
+    padding: 0 5% 34px;
+    text-align: left;
 }
 
 .banner__quote,
 .banner__signoff {
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 3.4vw, 3rem);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 300;
     font-style: italic;
     line-height: 1.3;
     color: var(--white);
-    max-width: 760px;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+    max-width: 600px;
+    text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45);
 }
 
 .banner__label {
     display: block;
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 500;
     font-style: normal;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--gold-light);
-    margin-bottom: 18px;
+    margin-bottom: 12px;
+}
+
+/* Supporting line given presence as a centered serif statement (not an orphan) */
+.statement {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+    font-weight: 300;
+    line-height: 1.45;
+    color: var(--black);
+    max-width: 680px;
+    margin: 0 auto;
 }
 
 /* ----- Reveal Animations ----- */
@@ -1233,7 +1246,8 @@ p { max-width: 620px; }
     .hero--cover .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
     .hero--cover .hero__text { padding: 0 6% 22px; }
     .banner { aspect-ratio: 4 / 3; }
-    .banner__quote, .banner__signoff { font-size: 1.4rem; max-width: 14em; }
+    .banner__text { padding: 0 6% 22px; }
+    .banner__quote, .banner__signoff { font-size: 1.2rem; max-width: 15em; }
 }
 
 @media (max-width: 480px) {
