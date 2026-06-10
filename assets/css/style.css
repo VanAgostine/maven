@@ -1197,6 +1197,68 @@ p { max-width: 620px; }
 /* Reversed split — image on the left (used to alternate sides down a page) */
 .welcome-split--reverse .welcome-split__img { order: -1; }
 
+/* ----- Service Tiers (side-by-side) ----- */
+
+.tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.tier {
+    background: var(--white);
+    border: 1px solid var(--beige-dark);
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tier__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.tier__name {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--black);
+}
+
+.tier__price {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+}
+
+.tier .gold-bar { margin: 22px 0 26px; }
+
+/* Gold-dash list — shared by the tiers and What to Expect */
+.dash-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.dash-list li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--black);
+}
+
+.dash-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
 /* ----- Reveal Animations ----- */
 
 .reveal {
@@ -1325,6 +1387,8 @@ p { max-width: 620px; }
     .welcome-split { grid-template-columns: 1fr; gap: 36px; }
     .welcome-split__img { min-height: 0; aspect-ratio: 3 / 4; }
     .welcome-split--reverse .welcome-split__img { order: 0; }
+    .tiers { grid-template-columns: 1fr; gap: 24px; }
+    .tier { padding: 36px 28px; }
 }
 
 @media (max-width: 480px) {
