@@ -1123,6 +1123,47 @@ p { max-width: 620px; }
     margin: 0 auto;
 }
 
+/* ----- 2x2 Editorial Grid (text / image diagonal) ----- */
+
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: stretch;
+}
+
+.cell-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.cell-text h2 { margin-bottom: 4px; }
+.cell-text p { margin-bottom: 0; }
+
+.cell-text__accent {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.35;
+    color: var(--black);
+    margin-top: 26px;
+}
+
+.cell-img {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--beige);
+}
+
+.cell-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* ----- Reveal Animations ----- */
 
 .reveal {
@@ -1248,6 +1289,7 @@ p { max-width: 620px; }
     .banner { aspect-ratio: 4 / 3; }
     .banner__text { padding: 0 6% 22px; }
     .banner__quote, .banner__signoff { font-size: 1.2rem; max-width: 15em; }
+    .grid-2x2 { grid-template-columns: 1fr; gap: 36px; }
 }
 
 @media (max-width: 480px) {
