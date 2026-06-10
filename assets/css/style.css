@@ -1208,8 +1208,8 @@ p { max-width: 620px; }
 
 .tier {
     background: var(--white);
-    border: 1px solid var(--beige-dark);
-    padding: 48px 44px;
+    box-shadow: 0 28px 55px -30px rgba(62, 39, 35, 0.30), 0 8px 18px -12px rgba(62, 39, 35, 0.10);
+    padding: 50px 46px;
     display: flex;
     flex-direction: column;
 }
