@@ -61,6 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
         m.innerHTML += m.innerHTML;
     });
 
+    /* ----- Typewriter (hero quote) ----- */
+
+    const typeEl = document.querySelector('[data-typewriter]');
+    if (typeEl) {
+        const fullText = typeEl.textContent;
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduce) {
+            typeEl.textContent = '';
+            typeEl.classList.add('is-typing');
+            let i = 0;
+            const speed = 42;
+            const step = () => {
+                typeEl.textContent = fullText.slice(0, i);
+                if (i < fullText.length) {
+                    i++;
+                    setTimeout(step, speed);
+                } else {
+                    setTimeout(() => typeEl.classList.remove('is-typing'), 1400);
+                }
+            };
+            setTimeout(step, 500);
+        }
+    }
+
     /* ----- Smooth Scroll ----- */
 
     document.querySelectorAll('a[href^="#"]').forEach(a => {

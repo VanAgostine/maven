@@ -475,6 +475,22 @@ p { max-width: 620px; }
     font-size: min(1.85vw, 1.85rem);
 }
 
+/* Typewriter caret while the hero quote is being typed */
+.hero__subtitle.is-typing::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 0.1em;
+    background: currentColor;
+    vertical-align: -0.08em;
+    animation: type-caret 0.85s steps(1) infinite;
+}
+
+@keyframes type-caret {
+    50% { opacity: 0; }
+}
+
 /* ----- Content Block (text + image, Aman asymmetric layout) ----- */
 
 .content-block {
