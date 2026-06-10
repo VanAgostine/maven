@@ -416,23 +416,24 @@ p { max-width: 620px; }
     aspect-ratio: 16 / 6;
 }
 
-/* Home hero — shorter so it takes less vertical space, framed up to crop
-   the lone surfer out of the bottom of the water shot */
-.hero:not(.hero--inner) {
+/* Cover hero — full image with the quote overlaid lower-left.
+   Shared format so every page's front image matches the home wave shot. */
+.hero--cover {
     position: relative;
 }
 
-.hero:not(.hero--inner) .hero__media {
+.hero--cover .hero__media {
     position: relative;
     aspect-ratio: 21 / 9;
 }
 
-.hero:not(.hero--inner) .hero__media img {
+/* Home wave shot is framed up to crop the lone surfer out of the bottom */
+.hero--home .hero__media img {
     object-position: center 15%;
 }
 
-/* Soft gradient so the overlaid quote stays legible over bright water */
-.hero:not(.hero--inner) .hero__media::after {
+/* Soft gradient so the overlaid quote stays legible over the image */
+.hero--cover .hero__media::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -441,7 +442,7 @@ p { max-width: 620px; }
 }
 
 /* Quote overlaid lower-left — italic, no quote marks, like Maven speaking to you */
-.hero:not(.hero--inner) .hero__text {
+.hero--cover .hero__text {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -453,7 +454,7 @@ p { max-width: 620px; }
     z-index: 2;
 }
 
-.hero:not(.hero--inner) .hero__subtitle {
+.hero--cover .hero__subtitle {
     color: var(--white);
     margin-left: 0;
     text-shadow: 0 1px 18px rgba(0, 0, 0, 0.45);
@@ -1161,8 +1162,8 @@ p { max-width: 620px; }
 
     .hero__media { aspect-ratio: 16 / 10; }
     .hero--inner .hero__media { aspect-ratio: 16 / 8; }
-    .hero:not(.hero--inner) .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
-    .hero:not(.hero--inner) .hero__text { padding: 0 6% 22px; }
+    .hero--cover .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
+    .hero--cover .hero__text { padding: 0 6% 22px; }
 }
 
 @media (max-width: 480px) {
