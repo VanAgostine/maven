@@ -68,10 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const startDelay = parseInt(revealEl.dataset.revealDelay || '500', 10);
 
-        /* The mask is applied here rather than in the base stylesheet: if this
-           script never runs, the quote must still be readable, not masked out. */
+        /* The masked start state is already on screen via CSS (.has-js), so the
+           quote never flashes in unmasked. All that's left is to pace the sweep
+           by line length -- so a long quote and a short one reveal at the same
+           calm speed, not the same duration -- and then trigger it. */
         if (!reduce) {
-            revealEl.classList.add('reveal-mask');
+            const chars = [...revealEl.textContent].length;
+            const dur = Math.min(4200, Math.max(2400, chars * 46));
+            revealEl.style.setProperty('--reveal-dur', dur + 'ms');
             setTimeout(() => revealEl.classList.add('is-revealed'), startDelay);
         }
     }
