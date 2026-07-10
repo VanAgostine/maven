@@ -438,16 +438,6 @@ p { max-width: 620px; }
     object-position: center 15%;
 }
 
-/* The home hero opens up to 2:1 rather than the inner pages' 21:9, so the
-   sunset and horizon read as a vista rather than a letterboxed band.
-   The source is 3:2, so cover shows 1.5/2 = 75% of its height; at
-   object-position 40% that window runs 10%–85% down the frame, which still
-   crops the bottom-right source watermark away. Opening past ~1.85:1 would
-   start to expose it. */
-.hero--home .hero__media {
-    aspect-ratio: 2 / 1;
-}
-
 /* Home hero background video — fills the frame like the cover image.
    Pulled up slightly so the bottom edge (and any source watermark) crops away. */
 .hero__video {
