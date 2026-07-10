@@ -1467,51 +1467,68 @@ p { max-width: 620px; }
     color: var(--black);
 }
 
-/* ----- Services — featured offering (3:1 image banner + title + copy) ----- */
+/* ----- Services — offering cards in a grid (matches the gallery cards) ----- */
 
-.service-feature {
-    margin-bottom: clamp(64px, 9vw, 120px);
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(16px, 2vw, 32px);
 }
 
-.service-feature:last-child {
-    margin-bottom: 0;
-}
-
-/* 3:1 banner. White placeholder box with a hairline until the photo is dropped
-   in as an <img> inside it. */
-.service-feature__img {
-    aspect-ratio: 3 / 1;
+.service-card {
     background: var(--white);
-    border: 1px solid var(--beige-dark);
-    overflow: hidden;
-    margin-bottom: clamp(26px, 3vw, 44px);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--ease), box-shadow var(--ease);
 }
 
-.service-feature__img img {
+.service-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 26px 52px -28px rgba(62, 39, 35, 0.32), 0 10px 22px -12px rgba(62, 39, 35, 0.12);
+}
+
+/* Placeholder image area — soft beige until a photo is dropped in as an <img>
+   here. (A white box would be invisible against the white card.) */
+.service-card__image {
+    aspect-ratio: 16 / 9;
+    background: var(--beige);
+    overflow: hidden;
+}
+
+.service-card__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition: transform var(--ease-slow);
 }
 
-.service-feature__title {
-    margin-bottom: 20px;
+.service-card:hover .service-card__image img {
+    transform: scale(1.03);
 }
 
-.service-feature__desc {
-    max-width: 64ch;
-    font-size: 0.95rem;
-    line-height: 1.95;
+.service-card__body {
+    flex: 1;
+    padding: clamp(26px, 2.4vw, 44px);
+}
+
+.service-card__title {
+    margin-bottom: 16px;
+}
+
+.service-card__desc {
+    font-size: 0.9rem;
+    line-height: 1.9;
     color: var(--brown);
 }
 
-/* Hotel Bookings — the smaller of the two offerings */
-.service-feature--small {
-    max-width: 66%;
+@media (prefers-reduced-motion: reduce) {
+    .service-card { transition: none; }
+    .service-card:hover { transform: none; }
 }
 
 @media (max-width: 768px) {
-    .service-feature--small { max-width: 100%; }
+    .service-grid { grid-template-columns: 1fr; }
 }
 
 /* What to Expect — a serif lead with a witty supporting line per promise */
