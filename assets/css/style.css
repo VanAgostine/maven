@@ -1354,7 +1354,9 @@ p { max-width: 620px; }
     text-align: center;
 }
 
-.home-outro__quote {
+/* Elegant sign-off quote — italic serif centered under a faded gold hairline.
+   Shared by the home outro and the why-maven section close so they match. */
+.elevated-quote {
     font-family: var(--font-heading);
     font-style: italic;
     font-weight: 300;
@@ -1362,18 +1364,28 @@ p { max-width: 620px; }
     line-height: 1.5;
     color: var(--brown);
     max-width: 32em;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-/* A faded gold hairline above the quote — the site's accent — marks the
-   transition as deliberate and refined without a harder color line. */
-.home-outro__quote::before {
+/* A faded gold hairline above the quote — the site's accent — marks the line
+   as deliberate and refined without a harder rule. */
+.elevated-quote::before {
     content: '';
     display: block;
     width: 64px;
     height: 1px;
     margin: 0 auto 20px;
     background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+/* Inline emphasis — a serif italic lift for a key phrase inside body copy */
+.text-accent {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.15em;
+    color: var(--black);
 }
 
 /* Quotes as elegant italic pull-lines between the paragraphs */
