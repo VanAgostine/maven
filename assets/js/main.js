@@ -69,13 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const startDelay = parseInt(revealEl.dataset.revealDelay || '500', 10);
 
         /* The masked start state is already on screen via CSS (.has-js), so the
-           quote never flashes in unmasked. All that's left is to pace the sweep
-           by line length -- so a long quote and a short one reveal at the same
-           calm speed, not the same duration -- and then trigger it. */
+           quote never flashes in unmasked. Duration is strictly proportional to
+           line length with no clamp, so every quote reveals at the identical
+           speed -- the same letters per second -- however long or short it is.
+           A short line simply finishes sooner; a long one takes longer. Paired
+           with linear timing in the CSS, the pace is even within each line too. */
         if (!reduce) {
+            const MS_PER_CHAR = 65;
             const chars = [...revealEl.textContent].length;
-            const dur = Math.min(4200, Math.max(2400, chars * 46));
-            revealEl.style.setProperty('--reveal-dur', dur + 'ms');
+            revealEl.style.setProperty('--reveal-dur', chars * MS_PER_CHAR + 'ms');
             setTimeout(() => revealEl.classList.add('is-revealed'), startDelay);
         }
     }
