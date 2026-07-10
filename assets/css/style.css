@@ -1462,18 +1462,9 @@ p { max-width: 620px; }
 }
 
 .dash-list li {
-    position: relative;
-    padding-left: 22px;
     font-size: 0.92rem;
     line-height: 1.7;
     color: var(--black);
-}
-
-.dash-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
 }
 
 /* What to Expect — a serif lead with a witty supporting line per promise */
