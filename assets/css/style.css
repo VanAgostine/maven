@@ -1325,9 +1325,9 @@ p { max-width: 620px; }
     margin-right: 0.15em;
 }
 
-/* Welcome intro — heading + definition centered full-width above the content */
+/* Welcome intro — heading + definition, left-aligned full-width above the content */
 .welcome-intro {
-    text-align: center;
+    text-align: left;
     margin-bottom: clamp(50px, 6vw, 82px);
 }
 
@@ -1337,12 +1337,10 @@ p { max-width: 620px; }
 
 .welcome-intro .welcome-split__definition {
     max-width: 42em;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .welcome-intro .gold-bar {
-    margin: 34px auto 0;
+    margin: 34px 0 0;
 }
 
 /* Outro — a calm cream→beige band that dissolves the body/footer edge into one
@@ -1352,7 +1350,7 @@ p { max-width: 620px; }
    the band are invisible. */
 .home-outro {
     background: linear-gradient(to bottom, var(--cream), var(--beige));
-    padding: clamp(80px, 11vw, 150px) 0;
+    padding: clamp(26px, 3.2vw, 44px) 0;
     text-align: center;
 }
 
@@ -1360,10 +1358,11 @@ p { max-width: 620px; }
     font-family: var(--font-heading);
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(1.6rem, 3.4vw, 2.7rem);
-    line-height: 1.35;
-    color: var(--black);
-    max-width: 16em;
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    line-height: 1.5;
+    color: var(--brown);
+    opacity: 0.78;
+    max-width: 32em;
     margin: 0 auto;
 }
 
