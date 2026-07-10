@@ -1467,68 +1467,12 @@ p { max-width: 620px; }
     color: var(--black);
 }
 
-/* ----- Services — offering cards in a grid (matches the gallery cards) ----- */
-
-.service-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(16px, 2vw, 32px);
-}
-
-.service-card {
+/* ----- Services — white placeholder box for a split image until a photo is added.
+   Drop the photo in as <img> inside the .welcome-split__img and remove the
+   --placeholder modifier. ----- */
+.welcome-split__img--placeholder {
     background: var(--white);
-    display: flex;
-    flex-direction: column;
-    transition: transform var(--ease), box-shadow var(--ease);
-}
-
-.service-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 26px 52px -28px rgba(62, 39, 35, 0.32), 0 10px 22px -12px rgba(62, 39, 35, 0.12);
-}
-
-/* Placeholder image area — soft beige until a photo is dropped in as an <img>
-   here. (A white box would be invisible against the white card.) */
-.service-card__image {
-    aspect-ratio: 16 / 9;
-    background: var(--beige);
-    overflow: hidden;
-}
-
-.service-card__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform var(--ease-slow);
-}
-
-.service-card:hover .service-card__image img {
-    transform: scale(1.03);
-}
-
-.service-card__body {
-    flex: 1;
-    padding: clamp(26px, 2.4vw, 44px);
-}
-
-.service-card__title {
-    margin-bottom: 16px;
-}
-
-.service-card__desc {
-    font-size: 0.9rem;
-    line-height: 1.9;
-    color: var(--brown);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .service-card { transition: none; }
-    .service-card:hover { transform: none; }
-}
-
-@media (max-width: 768px) {
-    .service-grid { grid-template-columns: 1fr; }
+    border: 1px solid var(--beige-dark);
 }
 
 /* What to Expect — a serif lead with a witty supporting line per promise */
