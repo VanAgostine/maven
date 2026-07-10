@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealEl = document.querySelector('[data-reveal]');
     if (revealEl) {
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const startDelay = parseInt(revealEl.dataset.revealDelay || '120', 10);
+        const startDelay = parseInt(revealEl.dataset.revealDelay || '0', 10);
 
         /* The masked start state is already on screen via CSS (.has-js), so the
            quote never flashes in unmasked. Duration is strictly proportional to
@@ -78,7 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const MS_PER_CHAR = 65;
             const chars = [...revealEl.textContent].length;
             revealEl.style.setProperty('--reveal-dur', chars * MS_PER_CHAR + 'ms');
-            setTimeout(() => revealEl.classList.add('is-revealed'), startDelay);
+
+            /* With no data-reveal-delay -- every page but home -- start on the
+               next frame: the masked state has already painted, so the sweep
+               still animates rather than jumping, and it begins the instant the
+               page is up. Home passes a delay so its MAVEN wordmark leads. */
+            const start = () => revealEl.classList.add('is-revealed');
+            if (startDelay > 0) {
+                setTimeout(start, startDelay);
+            } else {
+                requestAnimationFrame(() => requestAnimationFrame(start));
+            }
         }
     }
 
