@@ -532,29 +532,39 @@ p { max-width: 620px; }
     font-size: min(1.85vw, 1.85rem);
 }
 
-/* Hero quote reveal — each glyph resolves out of a soft blur. The fade runs far
-   longer than the gap between characters, so ~17 are always mid-resolve and the
-   line materializes as one continuous motion instead of clattering into place.
-   white-space: pre keeps the spaces from collapsing now that each is its own span. */
-.hero__subtitle .tw-char {
-    white-space: pre;
-    opacity: 0;
-    filter: blur(7px);
-    transition: opacity 0.72s cubic-bezier(0.22, 0.61, 0.36, 1),
-                filter  0.72s cubic-bezier(0.22, 0.61, 0.36, 1);
+/* Hero quote reveal — a feathered gradient sweeps across the line once and the
+   words emerge out of it. No glyphs, no words, no steps: one continuous motion.
+
+   The mask image is 3x the element's width. Its left third is opaque, then it
+   feathers to transparent over the next 20%. Sliding it from 100% to 0% carries
+   that soft edge across the text exactly once — starting fully hidden, ending
+   fully opaque.
+
+   width: fit-content is load-bearing. The paragraph is a block, so without it the
+   mask would span the full column while the text occupies only part of it, and
+   the sweep would finish before it reached the last word.
+
+   Applied by JS via .reveal-mask, never in the base rule — an unmasked quote is
+   the correct fallback if the script fails. */
+.hero__subtitle.reveal-mask {
+    width: fit-content;
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 33.333%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+            mask-image: linear-gradient(90deg, #000 0%, #000 33.333%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-size: 300% 100%;
+            mask-size: 300% 100%;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-position: 100% 0;
+            mask-position: 100% 0;
+    transition: -webkit-mask-position 1.8s cubic-bezier(0.4, 0, 0.15, 1);
+    transition:         mask-position 1.8s cubic-bezier(0.4, 0, 0.15, 1);
+    transition:         mask-position 1.8s cubic-bezier(0.4, 0, 0.15, 1),
+                -webkit-mask-position 1.8s cubic-bezier(0.4, 0, 0.15, 1);
 }
 
-.hero__subtitle .tw-char.is-lit {
-    opacity: 1;
-    filter: blur(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero__subtitle .tw-char {
-        opacity: 1;
-        filter: none;
-        transition: none;
-    }
+.hero__subtitle.reveal-mask.is-revealed {
+    -webkit-mask-position: 0 0;
+            mask-position: 0 0;
 }
 
 /* ----- Content Block (text + image, Aman asymmetric layout) ----- */

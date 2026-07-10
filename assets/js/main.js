@@ -61,41 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
         m.innerHTML += m.innerHTML;
     });
 
-    /* ----- Typewriter (hero quote) ----- */
+    /* ----- Hero quote reveal ----- */
 
-    const typeEl = document.querySelector('[data-typewriter]');
-    if (typeEl) {
-        const fullText = typeEl.textContent;
+    const revealEl = document.querySelector('[data-reveal]');
+    if (revealEl) {
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const startDelay = parseInt(typeEl.dataset.typewriterDelay || '500', 10);
+        const startDelay = parseInt(revealEl.dataset.revealDelay || '500', 10);
+
+        /* The mask is applied here rather than in the base stylesheet: if this
+           script never runs, the quote must still be readable, not masked out. */
         if (!reduce) {
-            const stagger = 42;
-
-            /* Every glyph is laid out up front, so the line never reflows as it
-               reveals — only opacity and blur change. Spread, not split(''),
-               keeps the em dashes from being torn into surrogate halves. */
-            const frag = document.createDocumentFragment();
-            const chars = [...fullText].map(ch => {
-                const span = document.createElement('span');
-                span.className = 'tw-char';
-                span.textContent = ch;
-                frag.appendChild(span);
-                return span;
-            });
-            typeEl.textContent = '';
-            typeEl.appendChild(frag);
-
-            /* Driven off the frame clock rather than chained timeouts, so the
-               cadence can't drift as the tab throttles. */
-            let lit = 0;
-            let startedAt = null;
-            const frame = now => {
-                if (startedAt === null) startedAt = now;
-                const target = Math.min(Math.floor((now - startedAt) / stagger) + 1, chars.length);
-                while (lit < target) chars[lit++].classList.add('is-lit');
-                if (lit < chars.length) requestAnimationFrame(frame);
-            };
-            setTimeout(() => requestAnimationFrame(frame), startDelay);
+            revealEl.classList.add('reveal-mask');
+            setTimeout(() => revealEl.classList.add('is-revealed'), startDelay);
         }
     }
 
