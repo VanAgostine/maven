@@ -1307,6 +1307,14 @@ p { max-width: 620px; }
 
 .welcome-split__text .welcome-split__definition { margin-top: 14px; }
 
+/* The defined word as a dictionary headword — upright display face, not
+   italic, so "Maven" reads as the term while the gloss after it stays soft. */
+.welcome-split__term {
+    font-family: var(--font-display);
+    font-style: normal;
+    color: var(--black);
+}
+
 /* Quotes as elegant italic pull-lines between the paragraphs */
 .welcome-split__quote {
     font-family: var(--font-heading);
