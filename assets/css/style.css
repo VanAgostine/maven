@@ -56,18 +56,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ----- Typography ----- */
 
-/* Headings use the display face (Antic Didone) — the same font as the
-   MAVEN TRAVEL logo — so every header across the site reads consistently. */
+/* Headings are styled to match the MAVEN TRAVEL logo exactly: the display
+   face (Antic Didone), weight 400, uppercase, and the logo's 0.22em tracking.
+   This is the one shared stylesheet, so it applies on every page. */
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 400;
     line-height: 1.15;
     color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
 }
 
-h1 { font-size: clamp(2.6rem, 5vw, 4.5rem); letter-spacing: 0.02em; }
-h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: 0.01em; }
-h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); letter-spacing: 0.01em; }
+h1 { font-size: clamp(2.6rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 
 h4 {
     font-family: var(--font-body);
