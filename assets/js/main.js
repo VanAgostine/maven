@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealEl = document.querySelector('[data-reveal]');
     if (revealEl) {
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const startDelay = parseInt(revealEl.dataset.revealDelay || '500', 10);
+        const startDelay = parseInt(revealEl.dataset.revealDelay || '120', 10);
 
         /* The masked start state is already on screen via CSS (.has-js), so the
            quote never flashes in unmasked. Duration is strictly proportional to
