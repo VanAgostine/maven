@@ -1348,7 +1348,7 @@ p { max-width: 620px; }
    reads as a seamless transition rather than a hard color change. The gradient
    starts at the body's cream and ends at the footer's beige, so both edges of
    the band are invisible. */
-.home-outro {
+.outro {
     background: linear-gradient(to bottom, var(--cream), var(--beige));
     padding: clamp(16px, 2vw, 30px) 0;
     text-align: center;
@@ -1369,23 +1369,9 @@ p { max-width: 620px; }
     text-align: center;
 }
 
-/* A faded gold hairline above the quote — the site's accent — marks the line
-   as deliberate and refined without a harder rule. */
-.elevated-quote::before {
-    content: '';
-    display: block;
-    width: 64px;
-    height: 1px;
-    margin: 0 auto 20px;
-    background: linear-gradient(to right, transparent, var(--gold), transparent);
-}
-
-/* Inline emphasis — a serif italic lift for a key phrase inside body copy */
+/* Inline emphasis — same font, size and color as the surrounding copy, just italic */
 .text-accent {
-    font-family: var(--font-heading);
     font-style: italic;
-    font-size: 1.15em;
-    color: var(--black);
 }
 
 /* Quotes as elegant italic pull-lines between the paragraphs */
