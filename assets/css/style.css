@@ -532,20 +532,29 @@ p { max-width: 620px; }
     font-size: min(1.85vw, 1.85rem);
 }
 
-/* Typewriter caret while the hero quote is being typed */
-.hero__subtitle.is-typing::after {
-    content: '';
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    margin-left: 0.1em;
-    background: currentColor;
-    vertical-align: -0.08em;
-    animation: type-caret 0.85s steps(1) infinite;
+/* Hero quote reveal — each glyph resolves out of a soft blur. The fade runs far
+   longer than the gap between characters, so ~17 are always mid-resolve and the
+   line materializes as one continuous motion instead of clattering into place.
+   white-space: pre keeps the spaces from collapsing now that each is its own span. */
+.hero__subtitle .tw-char {
+    white-space: pre;
+    opacity: 0;
+    filter: blur(7px);
+    transition: opacity 0.72s cubic-bezier(0.22, 0.61, 0.36, 1),
+                filter  0.72s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-@keyframes type-caret {
-    50% { opacity: 0; }
+.hero__subtitle .tw-char.is-lit {
+    opacity: 1;
+    filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__subtitle .tw-char {
+        opacity: 1;
+        filter: none;
+        transition: none;
+    }
 }
 
 /* ----- Content Block (text + image, Aman asymmetric layout) ----- */

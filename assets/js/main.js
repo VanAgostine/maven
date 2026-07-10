@@ -69,20 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const startDelay = parseInt(typeEl.dataset.typewriterDelay || '500', 10);
         if (!reduce) {
+            const stagger = 42;
+
+            /* Every glyph is laid out up front, so the line never reflows as it
+               reveals — only opacity and blur change. Spread, not split(''),
+               keeps the em dashes from being torn into surrogate halves. */
+            const frag = document.createDocumentFragment();
+            const chars = [...fullText].map(ch => {
+                const span = document.createElement('span');
+                span.className = 'tw-char';
+                span.textContent = ch;
+                frag.appendChild(span);
+                return span;
+            });
             typeEl.textContent = '';
-            typeEl.classList.add('is-typing');
-            let i = 0;
-            const speed = 42;
-            const step = () => {
-                typeEl.textContent = fullText.slice(0, i);
-                if (i < fullText.length) {
-                    i++;
-                    setTimeout(step, speed);
-                } else {
-                    setTimeout(() => typeEl.classList.remove('is-typing'), 1400);
-                }
+            typeEl.appendChild(frag);
+
+            /* Driven off the frame clock rather than chained timeouts, so the
+               cadence can't drift as the tab throttles. */
+            let lit = 0;
+            let startedAt = null;
+            const frame = now => {
+                if (startedAt === null) startedAt = now;
+                const target = Math.min(Math.floor((now - startedAt) / stagger) + 1, chars.length);
+                while (lit < target) chars[lit++].classList.add('is-lit');
+                if (lit < chars.length) requestAnimationFrame(frame);
             };
-            setTimeout(step, startDelay);
+            setTimeout(() => requestAnimationFrame(frame), startDelay);
         }
     }
 
