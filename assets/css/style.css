@@ -380,13 +380,15 @@ p { max-width: 620px; }
 /* ----- Hero (Aman-style: contained image, text below) ----- */
 
 .hero {
-    padding: 40px 0 0;
+    padding: 0;
 }
 
+/* Full-bleed: the hero image spans the whole viewport width and butts up
+   against the sticky header, no side margins or top gap. The quote overlay
+   below keeps its own inset, so the bottom is unchanged. */
 .hero__media {
-    width: 88%;
-    max-width: var(--container);
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     overflow: hidden;
     aspect-ratio: 16 / 8;
     background: var(--beige);
