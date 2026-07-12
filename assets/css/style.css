@@ -1314,6 +1314,17 @@ p { max-width: 620px; }
 /* Longer gold accent under the maven definition (home) — the default 40px reads too small here */
 .welcome-split__definition + .gold-bar { width: 72px; }
 
+/* Keep "Welcome to Maven Travel" on one line inside the left column: scale the
+   heading to the column width and trim its tracking so it never wraps. Two-column
+   layout only — on mobile it's full width and keeps the normal heading size. */
+@media (min-width: 769px) {
+    .welcome-heading {
+        white-space: nowrap;
+        letter-spacing: 0.08em;
+        font-size: min(2.1rem, 2.35vw);
+    }
+}
+
 /* The defined word as a small, tracked kicker — the site's own refined label
    treatment (body face, uppercase, letter-spaced) rather than a heavy upright
    headword, so "Maven" whispers the term instead of announcing it. */
