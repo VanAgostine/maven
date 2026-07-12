@@ -1311,6 +1311,9 @@ p { max-width: 620px; }
 
 .welcome-split__text .welcome-split__definition { margin-top: 20px; }
 
+/* Longer gold accent under the maven definition (home) — the default 40px reads too small here */
+.welcome-split__definition + .gold-bar { width: 72px; }
+
 /* The defined word as a small, tracked kicker — the site's own refined label
    treatment (body face, uppercase, letter-spaced) rather than a heavy upright
    headword, so "Maven" whispers the term instead of announcing it. */
