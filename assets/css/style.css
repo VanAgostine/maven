@@ -1311,8 +1311,8 @@ p { max-width: 620px; }
 
 .welcome-split__text .welcome-split__definition { margin-top: 20px; }
 
-/* Longer gold accent under the maven definition (home) — the default 40px reads too small here */
-.welcome-split__definition + .gold-bar { width: 72px; }
+/* Longer gold accent — used under the intro headings on Home and Why Maven */
+.gold-bar--long { width: 72px; }
 
 /* Keep "Welcome to Maven Travel" on one line inside the left column: scale the
    heading to the column width and trim its tracking so it never wraps. Two-column
@@ -1322,6 +1322,11 @@ p { max-width: 620px; }
         white-space: nowrap;
         letter-spacing: 0.08em;
         font-size: min(2.1rem, 2.35vw);
+    }
+    /* A longer intro heading keeps the same size and tracking but may wrap to
+       two lines rather than clip. */
+    .welcome-heading--wrap {
+        white-space: normal;
     }
 }
 
