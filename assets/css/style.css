@@ -1565,8 +1565,7 @@ p { max-width: 620px; }
 /* White placeholder box until a photo is dropped in as an <img> inside it */
 .expect-card__img {
     aspect-ratio: 4 / 5;
-    background: var(--white);
-    border: 1px solid var(--beige-dark);
+    background: var(--beige);
     overflow: hidden;
     margin-bottom: clamp(18px, 1.6vw, 26px);
 }
