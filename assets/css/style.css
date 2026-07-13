@@ -1465,6 +1465,10 @@ p { max-width: 620px; }
     color: var(--gold);
 }
 
+/* Tighten the kicker to the heading above and the copy below */
+.welcome-split__text h2 + .split-title { margin-top: 16px; }
+.welcome-split__text .split-title + p { margin-top: 14px; }
+
 /* ----- Service Tiers (side-by-side) ----- */
 
 .tiers {
