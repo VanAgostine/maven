@@ -1508,20 +1508,41 @@ p { max-width: 620px; }
 
 /* min-width: 0 lets the scroller stay within its grid column and scroll
    internally instead of stretching the page. */
-.expect-showcase__scroller {
+.expect-showcase__right {
     min-width: 0;
+}
+
+.expect-showcase__scroller {
     display: flex;
     gap: clamp(20px, 2vw, 32px);
     overflow-x: auto;
     scroll-snap-type: x proximity;
-    padding-bottom: 26px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--brown) var(--beige-dark);
+    /* Native scrollbar hidden — replaced by the custom clickable line below. */
+    scrollbar-width: none;
 }
 
-.expect-showcase__scroller::-webkit-scrollbar { height: 2px; }
-.expect-showcase__scroller::-webkit-scrollbar-track { background: var(--beige-dark); }
-.expect-showcase__scroller::-webkit-scrollbar-thumb { background: var(--brown); }
+.expect-showcase__scroller::-webkit-scrollbar { display: none; }
+
+/* Custom scrollbar — a thin light track with a darker segment you click or drag.
+   Width/position of the thumb are driven by JS from the scroll state. */
+.expect-scrollbar {
+    position: relative;
+    height: 1px;
+    margin-top: clamp(20px, 2vw, 30px);
+    background: var(--beige-dark);
+    cursor: pointer;
+    touch-action: none;
+}
+
+.expect-scrollbar__thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 25%;
+    height: 3px;
+    transform: translateY(-50%);
+    background: var(--brown);
+}
 
 .expect-card {
     flex: 0 0 clamp(228px, 26vw, 290px);

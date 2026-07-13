@@ -61,6 +61,60 @@ document.addEventListener('DOMContentLoaded', () => {
         m.innerHTML += m.innerHTML;
     });
 
+    /* ----- Custom click/drag scrollbar for horizontal card scrollers ----- */
+
+    document.querySelectorAll('.expect-showcase').forEach(showcase => {
+        const scroller = showcase.querySelector('.expect-showcase__scroller');
+        const bar = showcase.querySelector('.expect-scrollbar');
+        const thumb = bar && bar.querySelector('.expect-scrollbar__thumb');
+        if (!scroller || !bar || !thumb) return;
+
+        /* Size and position the thumb from the current scroll state. */
+        const sync = () => {
+            const max = scroller.scrollWidth - scroller.clientWidth;
+            if (max <= 1) { bar.style.visibility = 'hidden'; return; }
+            bar.style.visibility = 'visible';
+            const widthPct = Math.max((scroller.clientWidth / scroller.scrollWidth) * 100, 10);
+            thumb.style.width = widthPct + '%';
+            thumb.style.left = (scroller.scrollLeft / max) * (100 - widthPct) + '%';
+        };
+
+        /* Map a pointer x on the track to a scroll position (thumb-centered). */
+        const seek = (clientX, smooth) => {
+            const rect = bar.getBoundingClientRect();
+            const tw = thumb.offsetWidth;
+            let p = (clientX - rect.left - tw / 2) / (rect.width - tw);
+            p = Math.max(0, Math.min(1, p));
+            const max = scroller.scrollWidth - scroller.clientWidth;
+            scroller.scrollTo({ left: p * max, behavior: smooth ? 'smooth' : 'auto' });
+        };
+
+        scroller.addEventListener('scroll', sync, { passive: true });
+        window.addEventListener('resize', sync);
+        sync();
+
+        /* Click the line to jump (smooth); drag the segment to scrub (instant). */
+        let dragging = false, moved = false, downX = 0;
+        bar.addEventListener('pointerdown', e => {
+            dragging = true; moved = false; downX = e.clientX;
+            bar.setPointerCapture(e.pointerId);
+            e.preventDefault();
+        });
+        bar.addEventListener('pointermove', e => {
+            if (!dragging) return;
+            if (Math.abs(e.clientX - downX) > 3) moved = true;
+            if (moved) seek(e.clientX, false);
+        });
+        const release = e => {
+            if (!dragging) return;
+            dragging = false;
+            try { bar.releasePointerCapture(e.pointerId); } catch (_) {}
+            if (!moved) seek(e.clientX, true);
+        };
+        bar.addEventListener('pointerup', release);
+        bar.addEventListener('pointercancel', release);
+    });
+
     /* ----- Hero quote reveal ----- */
 
     const revealEl = document.querySelector('[data-reveal]');
