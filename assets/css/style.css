@@ -1338,6 +1338,11 @@ p { max-width: 620px; }
     .welcome-heading--wrap {
         white-space: normal;
     }
+    /* Slightly larger intro heading — services "How We Make Magic". Still one
+       line; scoped so the longer home-page heading isn't pushed to overflow. */
+    .welcome-heading--lg {
+        font-size: min(2.45rem, 2.75vw);
+    }
 }
 
 /* The defined word as a small, tracked kicker — the site's own refined label
@@ -1450,12 +1455,12 @@ p { max-width: 620px; }
 
 /* Services split titles — the small gold kicker style, like the MAVEN term on home */
 .split-title {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-style: italic;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: none;
     letter-spacing: normal;
-    font-size: 1.05rem;
+    font-size: clamp(1.18rem, 1.6vw, 1.45rem);
     color: var(--brown);
 }
 
