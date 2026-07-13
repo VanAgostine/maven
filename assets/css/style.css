@@ -962,6 +962,9 @@ p { max-width: 620px; }
 
 /* ----- Contact ----- */
 
+/* Land the contact section below the sticky header when jumped/scrolled to */
+#contact { scroll-margin-top: 90px; }
+
 .contact-layout {
     display: grid;
     grid-template-columns: 1.3fr 1fr;

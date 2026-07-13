@@ -23,7 +23,7 @@
             </div>
             <a href="index.html" class="header__logo">Maven Travel</a>
             <div class="header__right">
-                <a href="contact.html" class="header__cta">Contact</a>
+                <a href="#contact" class="header__cta">Contact</a>
             </div>
         </div>
     </header>
@@ -39,7 +39,7 @@
                     <li><a href="services.html" class="nav-overlay__link">Services</a></li>
                     <li><a href="experiences.html" class="nav-overlay__link">Gallery</a></li>
                     <li><a href="about.html" class="nav-overlay__link">About Us</a></li>
-                    <li><a href="contact.html" class="nav-overlay__link">Contact</a></li>
+                    <li><a href="#contact" class="nav-overlay__link">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -123,6 +123,72 @@
             </div>
         </section>
 
+        <!-- Contact — merged in from the former contact page -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="reveal mb-lg">
+                    <h2 class="mb-md">Let's Talk</h2>
+                    <div class="gold-bar"></div>
+                </div>
+                <div class="contact-layout">
+
+                    <!-- Form -->
+                    <div class="reveal">
+                        <form class="form">
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label class="form__label" for="firstName">First Name</label>
+                                    <input class="form__input" type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form__group">
+                                    <label class="form__label" for="lastName">Last Name</label>
+                                    <input class="form__input" type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="email">Email</label>
+                                <input class="form__input" type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="phone">Phone</label>
+                                <input class="form__input" type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="destination">Dream Destination</label>
+                                <input class="form__input" type="text" id="destination" name="destination">
+                            </div>
+                            <div class="form__group">
+                                <label class="form__label" for="message">Tell Us About Your Trip</label>
+                                <textarea class="form__textarea" id="message" name="message" rows="5"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn">Send Inquiry</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="reveal reveal-d2">
+                        <h2 class="mb-lg">Reach us</h2>
+
+                        <div class="contact-person">
+                            <h3 class="contact-person__name">Nhu Lam</h3>
+                            <p class="contact-person__detail"><a href="mailto:nhu.lam@fora.travel">nhu.lam@fora.travel</a></p>
+                            <p class="contact-person__detail"><a href="tel:3036011516">303.601.1516</a></p>
+                        </div>
+
+                        <div class="contact-person">
+                            <h3 class="contact-person__name">Megan Shoflick</h3>
+                            <p class="contact-person__detail"><a href="mailto:megan.shoflick@fora.travel">megan.shoflick@fora.travel</a></p>
+                            <p class="contact-person__detail"><a href="tel:3034894073">303.489.4073</a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -156,7 +222,7 @@
                     <a href="services.html" class="footer__link">Services</a>
                     <a href="experiences.html" class="footer__link">Gallery</a>
                     <a href="about.html" class="footer__link">About Us</a>
-                    <a href="contact.html" class="footer__link">Contact</a>
+                    <a href="#contact" class="footer__link">Contact</a>
                 </div>
                 <div>
                     <h4 class="footer__col-title">Contact</h4>
