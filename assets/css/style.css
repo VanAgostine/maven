@@ -42,7 +42,7 @@ html {
 body {
     font-family: var(--font-body);
     font-weight: 300;
-    font-size: 15px;
+    font-size: clamp(15px, 0.4vw + 10px, 17px);
     line-height: 1.85;
     color: var(--brown);
     background: var(--cream);
@@ -1440,6 +1440,9 @@ p { max-width: 620px; }
     position: relative;
     overflow: hidden;
     background: var(--beige);
+    /* Fixed portrait crop (site's 4/5 image language) so the framing stays put
+       at any window width instead of shifting with the text column's height. */
+    aspect-ratio: 4 / 5;
 }
 
 .welcome-split__img img {
