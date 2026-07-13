@@ -1294,6 +1294,9 @@ p { max-width: 620px; }
 .welcome-split__text h2 { margin-bottom: 4px; }
 .welcome-split__text > * + * { margin-top: 46px; }
 .welcome-split__text .gold-bar { margin-top: 16px; }
+/* Tighter gap between consecutive paragraphs (the 46px above is kept for the
+   heading/gold-bar-to-body separation). */
+.welcome-split__text p + p { margin-top: 28px; }
 
 /* Soft maven definition under the Welcome heading — a light italic gloss,
    smaller and airier than the body copy so it reads as a delicate aside
