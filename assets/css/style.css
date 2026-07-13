@@ -1404,6 +1404,23 @@ p { max-width: 620px; }
     text-align: center;
 }
 
+/* One-line variant for a long sign-off: no max-width, no wrap, font scales
+   with the viewport so it always fits. Falls back to wrapping on phones,
+   where one line would be unreadably small. */
+.elevated-quote--oneline {
+    max-width: none;
+    white-space: nowrap;
+    font-size: min(1.35rem, 1.7vw);
+}
+
+@media (max-width: 768px) {
+    .elevated-quote--oneline {
+        white-space: normal;
+        max-width: 24em;
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+}
+
 /* Inline emphasis — same font, size and color as the surrounding copy, just italic */
 .text-accent {
     font-style: italic;
