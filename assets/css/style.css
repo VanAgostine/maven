@@ -859,9 +859,9 @@ p { max-width: 620px; }
 
 .profile {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: stretch;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: clamp(40px, 5vw, 72px);
+    align-items: start;
 }
 
 .profile--reverse { direction: rtl; }
@@ -871,6 +871,7 @@ p { max-width: 620px; }
     position: relative;
     overflow: hidden;
     background: var(--beige);
+    aspect-ratio: 4 / 5;
 }
 
 .profile__image {
@@ -937,17 +938,15 @@ p { max-width: 620px; }
     margin-bottom: 8px;
 }
 
+/* My Short List — clean hairline-divided items, no bullets */
 .profile__bucket li {
-    font-size: 0.85rem;
-    padding: 3px 0 3px 14px;
-    position: relative;
+    font-size: 0.9rem;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--beige-dark);
 }
 
-.profile__bucket li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
+.profile__bucket li:last-child {
+    border-bottom: none;
 }
 
 /* ----- Contact ----- */
