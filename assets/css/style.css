@@ -1454,6 +1454,17 @@ p { max-width: 620px; }
 /* Reversed split — image on the left (used to alternate sides down a page) */
 .welcome-split--reverse .welcome-split__img { order: -1; }
 
+/* Services split titles — elegant italic serif instead of the uppercase heading */
+.split-title {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.01em;
+    font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+    color: var(--black);
+}
+
 /* ----- Service Tiers (side-by-side) ----- */
 
 .tiers {
