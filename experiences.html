@@ -10,8 +10,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Grade the "outrageous experience ideas" photos: brighter + less yellow.
+         Adjust the feColorMatrix in #gallery-grade (in the body) to tune it. -->
+    <style>
+        .experience-card__image img { filter: url(#gallery-grade); }
+    </style>
 </head>
 <body>
+
+    <!-- Color grade referenced by the experience cards below: nudges brightness
+         up and cools the white balance to pull the yellow down. -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="gallery-grade" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix"
+                values="0.98 0    0    0 0.025
+                        0    0.99 0    0 0.025
+                        0    0    1.07 0 0.025
+                        0    0    0    1 0"/>
+        </filter>
+    </svg>
 
     <!-- Header -->
     <header class="header">
