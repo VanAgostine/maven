@@ -657,16 +657,8 @@ p { max-width: 620px; }
 }
 
 .experience-card {
-    background: var(--white);
     display: flex;
     flex-direction: column;
-    transition: transform var(--ease), box-shadow var(--ease);
-}
-
-/* Hover lift — same expanding feel as the service tiles */
-.experience-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 26px 52px -28px rgba(62, 39, 35, 0.32), 0 10px 22px -12px rgba(62, 39, 35, 0.12);
 }
 
 .experience-card__image {
@@ -691,17 +683,19 @@ p { max-width: 620px; }
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    padding: clamp(12px, 1.5vw, 24px) clamp(12px, 1.5vw, 24px) clamp(16px, 1.9vw, 28px);
+    padding: clamp(14px, 1.6vw, 20px) 0 0;
 }
 
+/* Gold kicker — same treatment as the services "Custom Itinerary Planning" title */
 .experience-card__subtitle {
-    font-size: clamp(0.5rem, 0.78vw, 0.6rem);
-    letter-spacing: 0.18em;
+    font-family: var(--font-body);
+    font-size: clamp(0.62rem, 0.85vw, 0.72rem);
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--brown);
-    opacity: 0.6;
-    line-height: 1.55;
-    margin-bottom: 14px;
+    color: var(--gold);
+    line-height: 1.5;
+    margin-bottom: 12px;
 }
 
 .experience-card__title {
@@ -1457,12 +1451,12 @@ p { max-width: 620px; }
 /* Services split titles — the small gold kicker style, like the MAVEN term on home */
 .split-title {
     font-family: var(--font-body);
-    font-style: normal;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.72rem;
-    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1.05rem;
+    color: var(--brown);
 }
 
 /* Tighten the kicker to the heading above and the copy below */
@@ -1592,6 +1586,13 @@ p { max-width: 620px; }
 .expect-card {
     flex: 0 0 clamp(228px, 26vw, 290px);
     scroll-snap-align: start;
+}
+
+/* Destination tiles reused inside the same scroller (gallery page) */
+.expect-showcase__scroller .dest-tile {
+    flex: 0 0 clamp(240px, 26vw, 300px);
+    scroll-snap-align: start;
+    aspect-ratio: 4 / 5;
 }
 
 /* White placeholder box until a photo is dropped in as an <img> inside it */
