@@ -1471,6 +1471,16 @@ p { max-width: 620px; }
 .welcome-split__text h2 + .split-title { margin-top: 16px; }
 .welcome-split__text .split-title + p { margin-top: 14px; }
 
+/* Services blocks: larger body copy + kicker so the text fills the tall image
+   height and leaves less empty space beside it. */
+.welcome-split--lg .welcome-split__text p {
+    font-size: clamp(1.1rem, 0.5vw + 0.9rem, 1.25rem);
+    line-height: 1.9;
+}
+.welcome-split--lg .split-title {
+    font-size: clamp(1.4rem, 1.9vw, 1.75rem);
+}
+
 /* ----- Service Tiers (side-by-side) ----- */
 
 .tiers {
