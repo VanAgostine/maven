@@ -22,10 +22,13 @@
          up and cools the white balance to pull the yellow down. -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <filter id="gallery-grade" color-interpolation-filters="sRGB">
+            <!-- Boost overall vibrance, then keep it bright + cool with a touch
+                 extra green/blue so the water and foliage echo the banner. -->
+            <feColorMatrix type="saturate" values="1.18"/>
             <feColorMatrix type="matrix"
-                values="0.98 0    0    0 0.025
-                        0    0.99 0    0 0.025
-                        0    0    1.07 0 0.025
+                values="0.97 0    0    0 0.025
+                        0    1.00 0    0 0.025
+                        0    0    1.09 0 0.025
                         0    0    0    1 0"/>
         </filter>
     </svg>
@@ -66,7 +69,7 @@
         <!-- Hero -->
         <section class="hero hero--cover hero--oneline">
             <div class="hero__media">
-                <img src="assets/images/thailand-longtail-karst.jpg" alt="Longtail boat drifting between jungle-clad limestone cliffs in Thailand" style="object-position: center 80%;">
+                <img src="assets/images/thailand-longtail-karst.jpg" alt="Longtail boat drifting between jungle-clad limestone cliffs in Thailand" style="object-position: center 100%;">
             </div>
             <div class="hero__text">
                 <p class="hero__subtitle" data-reveal>Travel makes you modest. You see what a tiny place you occupy in this world — Gustave Flaubert</p>
