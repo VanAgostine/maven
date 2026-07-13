@@ -158,23 +158,36 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ----- Contact Form Handler ----- */
 
     const form = document.querySelector('.form');
-    if (form) {
+    if (form && form.getAttribute('action')) {
+        // Submit over AJAX so the visitor stays on the page and sees inline
+        // feedback; the same endpoint also handles a no-JS POST as a fallback.
+        const endpoint = form.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
         form.addEventListener('submit', e => {
             e.preventDefault();
             const btn = form.querySelector('.btn');
-            if (btn) {
-                const orig = btn.textContent;
-                btn.textContent = 'Sending...';
-                btn.style.pointerEvents = 'none';
-                setTimeout(() => {
+            if (!btn) return;
+            const orig = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.style.pointerEvents = 'none';
+            fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+            })
+                .then(res => res.json())
+                .then(() => {
                     btn.textContent = 'Message Sent';
                     form.reset();
+                })
+                .catch(() => {
+                    btn.textContent = 'Please email info@maventravel.com';
+                })
+                .finally(() => {
                     setTimeout(() => {
                         btn.textContent = orig;
                         btn.style.pointerEvents = '';
-                    }, 3000);
-                }, 1200);
-            }
+                    }, 4000);
+                });
         });
     }
 
