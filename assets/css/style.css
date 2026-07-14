@@ -697,6 +697,9 @@ p { max-width: 620px; }
     text-transform: none;
     color: var(--brown);
     line-height: 1.45;
+    /* Reserve two lines so every bold title below starts on the same baseline,
+       whatever the caption length (2.9em = 2 x line-height). */
+    min-height: 2.9em;
     margin-bottom: 8px;
 }
 
