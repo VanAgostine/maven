@@ -1378,14 +1378,12 @@ p { max-width: 620px; }
    treatment (body face, uppercase, letter-spaced) rather than a heavy upright
    headword, so "Maven" whispers the term instead of announcing it. */
 .welcome-split__term {
-    font-family: var(--font-body);
-    font-style: normal;
-    font-size: 0.66em;
+    font-family: var(--font-heading);
+    font-style: italic;
     font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-right: 0.15em;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--brown);
 }
 
 /* Welcome intro — heading + definition, left-aligned full-width above the content */
