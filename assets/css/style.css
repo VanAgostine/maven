@@ -1619,6 +1619,22 @@ p { max-width: 620px; }
     aspect-ratio: 4 / 5;
 }
 
+/* Temporary placeholder tiles (photo pending) — plain white box, name centered */
+.dest-tile--placeholder {
+    background: var(--white);
+    border: 1px solid var(--beige-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dest-tile--placeholder .dest-tile__name {
+    position: static;
+    background: none;
+    color: var(--brown);
+    text-align: center;
+    padding: 0 16px;
+}
+
 /* White placeholder box until a photo is dropped in as an <img> inside it */
 .expect-card__img {
     aspect-ratio: 4 / 5;
