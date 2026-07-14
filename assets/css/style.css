@@ -1351,6 +1351,14 @@ p { max-width: 620px; }
     }
 }
 
+/* Destinations heading: force a single line inside the narrow scroller column
+   by scaling it down to the column width (the other intro headings wrap). */
+.welcome-heading--oneline {
+    white-space: nowrap;
+    font-size: clamp(0.95rem, 1.8vw, 1.4rem);
+    letter-spacing: 0.03em;
+}
+
 /* The defined word as a small, tracked kicker — the site's own refined label
    treatment (body face, uppercase, letter-spaced) rather than a heavy upright
    headword, so "Maven" whispers the term instead of announcing it. */
