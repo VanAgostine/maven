@@ -69,7 +69,7 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: clamp(2.6rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+h2 { font-size: clamp(1.6rem, 2.35vw, 2.1rem); }
 h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 
 h4 {
@@ -920,7 +920,6 @@ p { max-width: 620px; }
 .profile__col .gold-bar { margin: 16px 0 0; }
 
 .profile__bio {
-    font-size: 0.9rem;
     margin-bottom: 20px;
 }
 
