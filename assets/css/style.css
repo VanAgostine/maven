@@ -970,11 +970,12 @@ p { max-width: 620px; }
     font-size: 0.9rem;
 }
 .profile__bucket li:not(:first-child)::before {
-    content: '·';
+    content: '•';
     margin: 0 0.7em;
     color: var(--gold);
-    font-size: 1.7em;
+    font-size: 1.1em;
     line-height: 1;
+    vertical-align: middle;
 }
 
 .profile__bucket li:last-child {
