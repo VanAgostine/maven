@@ -652,9 +652,15 @@ p { max-width: 620px; }
 
 .experience-grid {
     display: grid;
-    /* Fluid columns: 3 on desktop, 2 on tablet, 1 on phone — never squeezed. */
-    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: clamp(10px, 1.6vw, 28px);
+}
+/* Always 3 across on desktop; step down so phones/tablets aren't cramped. */
+@media (max-width: 760px) {
+    .experience-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .experience-grid { grid-template-columns: 1fr; }
 }
 
 .experience-card {
@@ -1626,10 +1632,11 @@ p { max-width: 620px; }
 /* ----- What to Expect — intro on the left, horizontal card scroller on the right ----- */
 
 .expect-showcase {
-    display: grid;
-    grid-template-columns: minmax(200px, 0.72fr) 2fr;
-    gap: clamp(30px, 5vw, 72px);
-    align-items: center;
+    display: block;
+}
+/* Heading sits top-left above a full-width scroller + scrollbar. */
+.expect-showcase .welcome-heading {
+    margin-bottom: clamp(20px, 2.5vw, 34px);
 }
 
 /* min-width: 0 lets the scroller stay within its grid column and scroll
