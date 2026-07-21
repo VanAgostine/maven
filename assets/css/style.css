@@ -1612,7 +1612,7 @@ p { max-width: 620px; }
     display: grid;
     grid-template-columns: minmax(200px, 0.72fr) 2fr;
     gap: clamp(30px, 5vw, 72px);
-    align-items: center;
+    align-items: end;
 }
 
 /* min-width: 0 lets the scroller stay within its grid column and scroll
