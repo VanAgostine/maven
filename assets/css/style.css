@@ -1416,18 +1416,22 @@ p { max-width: 620px; }
 
 /* Text-less "next page" indicator — a slim line + chevron (no circle) that
    carries the visitor onward to the next page in the site's flow. */
-.next-page {
-    display: inline-block;
+.page-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(28px, 4vw, 48px);
     margin-top: clamp(14px, 2vw, 22px);
+}
+.prev-page, .next-page {
+    display: inline-block;
     color: var(--brown);
     opacity: 0.55;
     transition: opacity var(--ease), transform var(--ease);
 }
-.next-page svg { display: block; width: 34px; height: 18px; }
-.next-page:hover {
-    opacity: 1;
-    transform: translateX(5px);
-}
+.prev-page svg, .next-page svg { display: block; width: 34px; height: 18px; }
+.prev-page:hover { opacity: 1; transform: translateX(-5px); }
+.next-page:hover { opacity: 1; transform: translateX(5px); }
 
 /* Elegant sign-off quote — italic serif centered under a faded gold hairline.
    Shared by the home outro and the why-maven section close so they match. */
