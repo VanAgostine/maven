@@ -1505,7 +1505,7 @@ p { max-width: 620px; }
 .split-title {
     font-family: var(--font-heading);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 600;
     text-transform: none;
     letter-spacing: normal;
     font-size: clamp(1.18rem, 1.6vw, 1.45rem);
