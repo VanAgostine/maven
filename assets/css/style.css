@@ -1027,6 +1027,12 @@ p { max-width: 620px; }
     text-transform: uppercase;
     color: var(--brown);
 }
+/* Every field is required — mark each label so it doesn't read as optional. */
+.form__label::after {
+    content: '*';
+    margin-left: 0.3em;
+    color: var(--gold);
+}
 
 .form__input,
 .form__textarea {
