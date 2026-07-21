@@ -861,6 +861,7 @@ p { max-width: 620px; }
     grid-template-columns: 0.8fr 1.5fr;
     gap: clamp(40px, 5vw, 72px);
     align-items: start;
+    text-align: center;
 }
 
 .profile--reverse { direction: rtl; }
@@ -871,6 +872,9 @@ p { max-width: 620px; }
     overflow: hidden;
     background: var(--beige);
     aspect-ratio: 4 / 5;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .profile__image {
@@ -919,7 +923,8 @@ p { max-width: 620px; }
 .profile__col .gold-bar { margin: 16px 0 0; }
 
 .profile__bio {
-    margin-bottom: 20px;
+    max-width: 620px;
+    margin: 0 auto 20px;
 }
 
 .profile__quote {
@@ -945,7 +950,7 @@ p { max-width: 620px; }
 .profile__bucket-title {
     font-family: var(--font-heading);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 1.05rem;
     letter-spacing: normal;
     text-transform: none;
@@ -958,6 +963,7 @@ p { max-width: 620px; }
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+    justify-content: center;
     list-style: none;
 }
 .profile__bucket li {
@@ -967,6 +973,8 @@ p { max-width: 620px; }
     content: '·';
     margin: 0 0.7em;
     color: var(--gold);
+    font-size: 1.7em;
+    line-height: 1;
 }
 
 .profile__bucket li:last-child {
