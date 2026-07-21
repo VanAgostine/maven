@@ -437,7 +437,7 @@ p { max-width: 620px; }
 
 .hero--cover .hero__media {
     position: relative;
-    aspect-ratio: 21 / 9;
+    aspect-ratio: 10 / 3;
 }
 
 /* Home wave shot is framed up to crop the lone surfer out of the bottom */
@@ -1147,10 +1147,11 @@ p { max-width: 620px; }
 .footer__partners-title {
     text-align: left;
     font-size: 0.6rem;
+    font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--brown);
-    opacity: 0.7;
+    opacity: 0.85;
     margin-bottom: 28px;
 }
 
