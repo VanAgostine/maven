@@ -670,7 +670,7 @@ p { max-width: 620px; }
 
 .experience-card__image {
     overflow: hidden;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1 / 1;
     background: var(--beige);
 }
 
@@ -1643,6 +1643,7 @@ p { max-width: 620px; }
 /* Heading sits top-left above a full-width scroller + scrollbar. */
 .expect-showcase .welcome-heading {
     margin-bottom: clamp(20px, 2.5vw, 34px);
+    font-weight: 700;
 }
 
 /* min-width: 0 lets the scroller stay within its grid column and scroll
