@@ -1621,6 +1621,24 @@ p { max-width: 620px; }
     min-width: 0;
 }
 
+/* Destinations heading — one word per line, right-aligned, spread evenly down
+   the full height of the scroller so it reads as a vertical column. */
+.dest-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    line-height: 1.1;
+    gap: 0.35em;
+}
+@media (min-width: 769px) {
+    .dest-heading {
+        min-height: clamp(300px, 32vw, 375px);
+        justify-content: space-between;
+        gap: 0;
+    }
+}
+
 .expect-showcase__scroller {
     display: flex;
     gap: clamp(20px, 2vw, 32px);
