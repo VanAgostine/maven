@@ -982,6 +982,21 @@ p { max-width: 620px; }
     border-bottom: none;
 }
 
+/* Megan's short list is the longest — keep it on one line on desktop by easing
+   the type down and tightening the bullet spacing; it still wraps on mobile. */
+@media (min-width: 769px) {
+    .profile--reverse .profile__bucket {
+        flex-wrap: nowrap;
+    }
+    .profile--reverse .profile__bucket li {
+        white-space: nowrap;
+        font-size: clamp(0.55rem, 0.9vw, 0.8rem);
+    }
+    .profile--reverse .profile__bucket li:not(:first-child)::before {
+        margin: 0 0.35em;
+    }
+}
+
 /* ----- Contact ----- */
 
 /* Land the contact section below the sticky header when jumped/scrolled to */
