@@ -971,9 +971,9 @@ p { max-width: 620px; }
 }
 .profile__bucket li:not(:first-child)::before {
     content: '•';
-    margin: 0 0.7em;
+    margin: 0 0.55em;
     color: var(--gold);
-    font-size: 1.1em;
+    font-size: 2em;
     line-height: 1;
     vertical-align: middle;
 }
