@@ -857,9 +857,10 @@ p { max-width: 620px; }
 /* ----- Profile / About ----- */
 
 .profile {
-    max-width: 620px;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: clamp(40px, 5vw, 72px);
+    align-items: center;
     text-align: center;
 }
 
@@ -871,7 +872,7 @@ p { max-width: 620px; }
     overflow: hidden;
     background: var(--beige);
     aspect-ratio: 4 / 5;
-    width: clamp(230px, 60%, 300px);
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -917,7 +918,7 @@ p { max-width: 620px; }
     margin-bottom: 2px;
 }
 
-.profile__col .profile__role { margin-bottom: clamp(26px, 4vw, 44px); }
+.profile__col .profile__role { margin-bottom: 0; }
 
 .profile__col .gold-bar { margin: 16px 0 0; }
 
