@@ -1423,10 +1423,10 @@ p { max-width: 620px; }
     opacity: 0.55;
     transition: opacity var(--ease), transform var(--ease);
 }
-.next-page svg { display: block; width: 16px; height: 30px; }
+.next-page svg { display: block; width: 34px; height: 18px; }
 .next-page:hover {
     opacity: 1;
-    transform: translateY(4px);
+    transform: translateX(5px);
 }
 
 /* Elegant sign-off quote — italic serif centered under a faded gold hairline.
