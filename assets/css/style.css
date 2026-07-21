@@ -652,7 +652,8 @@ p { max-width: 620px; }
 
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Fluid columns: 3 on desktop, 2 on tablet, 1 on phone — never squeezed. */
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: clamp(10px, 1.6vw, 28px);
 }
 
@@ -1880,6 +1881,7 @@ p { max-width: 620px; }
 
     .hero__media { aspect-ratio: 16 / 10; }
     .hero--inner .hero__media { aspect-ratio: 16 / 8; }
+    .hero--cover .hero__media { aspect-ratio: 4 / 3; }
     .hero--cover .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
     .hero--cover .hero__text { padding: 0 6% 22px; }
     .banner { aspect-ratio: 4 / 3; }
