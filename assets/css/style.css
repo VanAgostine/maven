@@ -1214,6 +1214,25 @@ p { max-width: 620px; }
     line-height: 1.7;
 }
 
+.footer__badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-top: 26px;
+}
+
+.footer__badges img {
+    height: 36px;
+    width: auto;
+    /* multiply melts the logos' white boxes into the beige footer */
+    mix-blend-mode: multiply;
+}
+
+.footer__badges .footer__badge--round {
+    height: 58px;
+}
+
 .footer__col-title {
     font-size: 0.6rem;
     font-weight: 500;
