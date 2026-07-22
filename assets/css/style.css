@@ -1215,10 +1215,10 @@ p { max-width: 620px; }
 }
 
 .footer__badges {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 52px;
     margin: 64px 0 56px;
 }
 
