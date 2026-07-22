@@ -1215,22 +1215,38 @@ p { max-width: 620px; }
 }
 
 .footer__badges {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 26px;
-    margin-top: 26px;
+    margin: 64px 0 56px;
 }
 
 .footer__badges img {
-    height: 36px;
+    height: 64px;
     width: auto;
     /* multiply melts the logos' white boxes into the beige footer */
     mix-blend-mode: multiply;
 }
 
 .footer__badges .footer__badge--round {
-    height: 58px;
+    height: 116px;
+}
+
+@media (max-width: 640px) {
+    .footer__badges {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        margin: 44px 0 40px;
+    }
+
+    .footer__badges img {
+        height: 48px;
+    }
+
+    .footer__badges .footer__badge--round {
+        height: 88px;
+    }
 }
 
 .footer__col-title {
