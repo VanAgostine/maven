@@ -72,6 +72,22 @@ h1 { font-size: clamp(2.6rem, 5vw, 4.5rem); }
 h2 { font-size: clamp(1.6rem, 2.35vw, 2.1rem); }
 h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); }
 
+/* Page-topic headings promoted to h1 for document structure; renders at h2 scale */
+.h-sub { font-size: clamp(1.6rem, 2.35vw, 2.1rem); }
+
+/* Visually hidden, read by assistive tech and crawlers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 h4 {
     font-family: var(--font-body);
     font-size: 0.65rem;
@@ -1390,6 +1406,7 @@ p { max-width: 620px; }
 }
 
 .welcome-split__text > * { margin: 0; }
+.welcome-split__text h1,
 .welcome-split__text h2 { margin-bottom: 4px; }
 .welcome-split__text > * + * { margin-top: 46px; }
 .welcome-split__text .gold-bar { margin-top: 16px; }
