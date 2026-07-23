@@ -1949,6 +1949,13 @@ p { max-width: 620px; }
     .hero--inner .hero__media { aspect-ratio: 16 / 8; }
     .hero--cover .hero__media { aspect-ratio: 4 / 3; }
     .hero--cover .hero__subtitle { font-size: 1.2rem; max-width: 15em; }
+    /* One-line hero quotes: the desktop rule pins them to a single viewport-scaled
+       line, which is unreadably small on phones — wrap and size up instead. */
+    .hero--cover.hero--oneline .hero__subtitle {
+        white-space: normal;
+        font-size: 1.2rem;
+        max-width: 15em;
+    }
     .hero--cover .hero__text { padding: 0 6% 22px; }
     .banner { aspect-ratio: 4 / 3; }
     .banner__text { padding: 0 6% 22px; }
