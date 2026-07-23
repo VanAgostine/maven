@@ -528,12 +528,13 @@ p { max-width: 620px; }
     pointer-events: none;
 }
 
-/* Quote overlaid lower-left — italic, no quote marks, like Maven speaking to you */
+/* Quote overlaid lower-left — italic, no quote marks, like Maven speaking to you.
+   Anchored to the hero's left edge (not a centered container) so it stays in the
+   corner on wide screens; the 5% side padding keeps it off the edge. */
 .hero--cover .hero__text {
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
-    transform: translateX(-50%);
     width: 88%;
     max-width: var(--container);
     padding: 0 5% 34px;
