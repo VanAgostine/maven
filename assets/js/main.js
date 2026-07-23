@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form && form.getAttribute('action')) {
         // Submit over AJAX so the visitor stays on the page and sees inline
         // feedback; the same endpoint also handles a no-JS POST as a fallback.
-        const endpoint = form.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
+        const endpoint = form.getAttribute('action');
         form.addEventListener('submit', e => {
             e.preventDefault();
             const btn = form.querySelector('.btn');
@@ -175,7 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: new FormData(form)
             })
                 .then(res => res.json())
-                .then(() => {
+                .then(data => {
+                    if (!data.success) throw new Error(data.message || 'send failed');
                     btn.textContent = 'Message Sent';
                     form.reset();
                 })
