@@ -946,9 +946,15 @@ p { max-width: 620px; }
 
 .profile__col .gold-bar { margin: 16px 0 0; }
 
+/* Bio copy: slightly smaller and tighter than site body text, but never below
+   15px so it stays comfortable on phones and for weaker eyesight. Left-aligned
+   because centered multi-paragraph text is hard to scan. */
 .profile__bio {
     max-width: 620px;
-    margin: 0 auto 20px;
+    margin: 0 auto 14px;
+    font-size: clamp(15px, 0.3vw + 12px, 15.5px);
+    line-height: 1.7;
+    text-align: left;
 }
 
 .profile__quote {
@@ -979,6 +985,7 @@ p { max-width: 620px; }
     letter-spacing: normal;
     text-transform: none;
     color: var(--brown);
+    margin-top: 26px;
     margin-bottom: 8px;
 }
 
