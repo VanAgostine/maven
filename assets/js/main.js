@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                 })
                 .catch(() => {
-                    btn.textContent = 'Please email info@maventravelgroup.com';
+                    btn.textContent = 'Please email maven@fora.travel';
                 })
                 .finally(() => {
                     setTimeout(() => {
